@@ -74,7 +74,7 @@ const graduates = [{"id":1,"first_name":"Cynde","university":"Missouri Southern 
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 const universities = [];
-graduates.forEach(function(item) {
+graduates.forEach(item => {
   universities.push(item.university)
 })
 universities.sort()
@@ -88,7 +88,7 @@ Name email@example.com
 
 Log the result of your new array. */
 const contactInfo = [];
-graduates.forEach(function(item) {
+graduates.forEach(item => {
   contactInfo.push(`${item.first_name} ${item.email}`)
 })
 console.log(contactInfo);
@@ -96,7 +96,7 @@ console.log(contactInfo);
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called uni that contains them all. Log the result. */
 const uni = [];
-graduates.forEach(function(item) {
+graduates.forEach(item => {
   if (item.university.match('Uni')) {
     uni.push(item.university)
   }
@@ -126,7 +126,7 @@ The zoo wants to display both the scientific name and the animal name in front o
 
 */
 const animalNames = [];
-zooAnimals.forEach(function(item) {
+zooAnimals.forEach(item => {
   animalNames.push(`Name: ${item.animal_name}, Scientific: ${item.scientific_name}.`)
 })
 console.log(animalNames);
@@ -138,7 +138,7 @@ The zoos need a list of all their animal's names (names only, not scientific) co
 
 */
 let lowerCase = [];
-lowerCase = zooAnimals.map(function(item) {
+lowerCase = zooAnimals.map(item => {
   return item.animal_name.toLowerCase()
 })
 console.log(lowerCase); 
@@ -150,7 +150,7 @@ The zoos are concenred about animals with a lower population count. Find out whi
 
 */
 let lowerPopulation = [];
-lowerPopulation = zooAnimals.filter(function(item) {
+lowerPopulation = zooAnimals.filter(item => {
   if (item.population < 5) {
     return item.animal_name
   }
@@ -164,7 +164,7 @@ The zoos need to know their total animal population across the United States.  F
 
 */
 let populationTotal = 0;
-populationTotal = zooAnimals.reduce(function(popTotal,popAmount) {
+populationTotal = zooAnimals.reduce((popTotal,popAmount) => {
   return popTotal + popAmount.population
 },0)
 console.log(populationTotal);
